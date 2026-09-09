@@ -26,10 +26,10 @@
 // - `promedioObjetivo` (number): Debe ser un número decimal (ej. 9.85).
 // - `estaMatriculado` (boolean): Debe ser true.
 
-export const nombreEstudiante: string = "";       // 👈 TODO: Escribe tu nombre aquí
-export const edadEstudiante: number = 0;          // 👈 TODO: Escribe tu edad aquí
-export const promedioObjetivo: number = 0;        // 👈 TODO: Escribe tu promedio objetivo
-export let estaMatriculado: boolean = false;    // 👈 TODO: Cambia a true
+export const nombreEstudiante: string = "Emilio";       // 👈 TODO: Escribe tu nombre aquí
+export const edadEstudiante: number = 17;          // 👈 TODO: Escribe tu edad aquí
+export const promedioObjetivo: number = 10;        // 👈 TODO: Escribe tu promedio objetivo
+export let estaMatriculado: boolean = true;    // 👈 TODO: Cambia a true
 
 /**
  * TODO: Implementa la función `obtenerResumenPersonal` usando Template Strings (${...}).
@@ -54,8 +54,11 @@ export function obtenerResumenPersonal(): string {
  *    (Pista: usa Number((suma / notas.length).toFixed(2)))
  */
 export function calcularPromedio(notas: readonly number[]): number {
-  // 👇 TODO: Escribe tu lógica aquí y reemplaza el return 0:
+ if(notas.length === 0) {
   return 0;
+ }
+  const suma = notas.reduce ((total, nota) => total + nota, 0);
+  return Number((suma/notas.length).toFixed(2));
 }
 
 // ============================================================================
@@ -78,6 +81,7 @@ export function formatearFichaEstudiante(
   paralelo: "E1" | "E2",
   activo: boolean
 ): string {
-  // 👇 TODO: Escribe tu lógica aquí y reemplaza el return "":
-  return "";
+  const nombreMayus = nombre.toUpperCase();
+  const estado = activo ? "MATRICULADO" : "RETIRADO" ;
+  return `[FICHA UETS] ${nombreMayus} (${edad} años) - Paralelo: ${paralelo} - Estado: ${estado}`;
 }
