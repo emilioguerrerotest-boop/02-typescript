@@ -26,7 +26,7 @@
 // - `promedioObjetivo` (number): Debe ser un número decimal (ej. 9.85).
 // - `estaMatriculado` (boolean): Debe ser true.
 
-export const nombreEstudiante: string = "Emilio";       
+export const nombreEstudiante: string = "Emilio Guerrero";       
 export const edadEstudiante: number = 17;          
 export const promedioObjetivo: number = 10;        
 export let estaMatriculado: boolean = true;    
@@ -37,8 +37,9 @@ export let estaMatriculado: boolean = true;
  * `👤 Estudiante: NOMBRE | 🎂 Edad: EDAD años | 🎯 Meta: PROMEDIO/10 | 📋 Estado: MATRICULADO` (o NO_MATRICULADO si es false)
  */
 export function obtenerResumenPersonal(): string {
+  const estado = estaMatriculado ? 'MATRICULADO' : 'NO_MATRICULADO'; 
   
-  return "";
+  return "`Estudiante: ${nombreEstudiante} |Edad: ${edadEstudiante} años |Meta: ${promedioObjetivo}/10 |Estado: ${estado}`;";
 }
 
 // ============================================================================
@@ -53,12 +54,13 @@ export function obtenerResumenPersonal(): string {
  * 4. Retornar el resultado como número redondeado a 2 decimales.
  *    (Pista: usa Number((suma / notas.length).toFixed(2)))
  */
-export function calcularPromedio(notas: readonly number[]): number {
+export function calcularPromedio(notas: number[]): number {
  if(notas.length === 0) {
   return 0;
  }
   const suma = notas.reduce ((total, nota) => total + nota, 0);
-  return Number((suma/notas.length).toFixed(2));
+  const promedio = suma / notas.length;
+  return Number(promedio.toFixed(2));
 }
 
 // ============================================================================

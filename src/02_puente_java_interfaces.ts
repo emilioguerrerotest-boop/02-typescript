@@ -103,9 +103,9 @@ export function calcularPrecioFinal(producto: ProductoItem): number {
   if(!producto.disponible){
     return 0;
   }
-  let precioFinal = producto.precio
-  if (producto.descuentoPorcentaje && producto.descuentoPorcentaje > 0) {
+  if (typeof producto.descuentoPorcentaje === "number" && producto.descuentoPorcentaje > 0) {
     const descuento = producto.precio * (producto.descuentoPorcentaje / 100);
+    return Number(producto.precio.toFixed(2));
   }
-  return Number(precioFinal.toFixed(2));
+  return Number((producto.precio - descuento).toFixed(2));
 }
