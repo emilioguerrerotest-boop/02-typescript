@@ -26,10 +26,10 @@
 // - `promedioObjetivo` (number): Debe ser un número decimal (ej. 9.85).
 // - `estaMatriculado` (boolean): Debe ser true.
 
-export const nombreEstudiante: string = "Emilio";       // 👈 TODO: Escribe tu nombre aquí
-export const edadEstudiante: number = 17;          // 👈 TODO: Escribe tu edad aquí
-export const promedioObjetivo: number = 10;        // 👈 TODO: Escribe tu promedio objetivo
-export let estaMatriculado: boolean = true;    // 👈 TODO: Cambia a true
+export const nombreEstudiante: string = "Emilio";       
+export const edadEstudiante: number = 17;          
+export const promedioObjetivo: number = 10;        
+export let estaMatriculado: boolean = true;    
 
 /**
  * TODO: Implementa la función `obtenerResumenPersonal` usando Template Strings (${...}).
@@ -37,7 +37,7 @@ export let estaMatriculado: boolean = true;    // 👈 TODO: Cambia a true
  * `👤 Estudiante: NOMBRE | 🎂 Edad: EDAD años | 🎯 Meta: PROMEDIO/10 | 📋 Estado: MATRICULADO` (o NO_MATRICULADO si es false)
  */
 export function obtenerResumenPersonal(): string {
-  // 👇 TODO: Escribe tu lógica aquí y reemplaza el return "":
+  
   return "";
 }
 
