@@ -37,9 +37,7 @@ export let estaMatriculado: boolean = true;
  * `👤 Estudiante: NOMBRE | 🎂 Edad: EDAD años | 🎯 Meta: PROMEDIO/10 | 📋 Estado: MATRICULADO` (o NO_MATRICULADO si es false)
  */
 export function obtenerResumenPersonal(): string {
-  const estado = estaMatriculado ? 'MATRICULADO' : 'NO_MATRICULADO'; 
-  
-  return "`Estudiante: ${nombreEstudiante} |Edad: ${edadEstudiante} años |Meta: ${promedioObjetivo}/10 |Estado: ${estado}`;";
+  return `👤 Estudiante: ${nombreEstudiante} | 🎂 Edad: ${edadEstudiante} años | 🎯 Meta: ${promedioObjetivo}/10 | 📜 Estado: ${estaMatriculado ? 'MATRICULADO' : 'NO_MATRICULADO'}`;
 }
 
 // ============================================================================
